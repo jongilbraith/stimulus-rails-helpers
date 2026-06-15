@@ -1,0 +1,3 @@
+require_relative "stimulus_rails_helpers/rails_helpers"
+require_relative "stimulus_rails_helpers/stimulus_renderer"
+require_relative "stimulus_rails_helpers/railtie"
