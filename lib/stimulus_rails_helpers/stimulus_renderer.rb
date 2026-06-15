@@ -10,7 +10,7 @@ module StimulusRailsHelpers
     end
 
     def element(element = :div, controllers: [], values: {}, outlets: {}, actions: {}, targets: {}, **other_attributes, &block)
-      generated_data_attributes = data_attributes(controllers:, values:, outlets:, actions:, targets:)
+      generated_data_attributes = data(controllers:, values:, outlets:, actions:, targets:)
       generated_data_attributes.merge!(other_attributes.delete(:data)) if other_attributes[:data]
 
       if block_given?
@@ -19,8 +19,9 @@ module StimulusRailsHelpers
         view_context.content_tag(element, "", data: generated_data_attributes, **other_attributes)
       end
     end
+    alias el element
 
-    def data_attributes(controllers: [], values: {}, outlets: {}, actions: {}, targets: {}, **other_data_attributes)
+    def data(controllers: [], values: {}, outlets: {}, actions: {}, targets: {}, **other_data_attributes)
       returned_attributes = {}
 
       if controllers.present?
