@@ -2,6 +2,8 @@ module StimulusRailsHelpers
   class StimulusRenderer
     module AttributeRenderers
       class Base
+        include ActionView::Helpers::OutputSafetyHelper
+
         attr_reader :descriptors, :namespace
 
         def initialize(descriptors, namespace: [])
@@ -62,7 +64,8 @@ module StimulusRailsHelpers
 
       class Actions < Base
         def to_s
-          to_a.join(" ")
+          # Have to consider escaping due to action notation containing `->`
+          safe_join(to_a, " ")
         end
 
         def to_a
@@ -79,14 +82,16 @@ module StimulusRailsHelpers
         def parse_action_names(controller_name, descriptor)
           # actions: { controller: :action }
           if descriptor.is_a?(String) || descriptor.is_a?(Symbol)
-            "#{prefix}#{kebabize(controller_name)}##{descriptor.to_s.camelize(:lower)}"
+            # Have to consider escaping due to action notation containing `->`
+            "#{prefix}#{kebabize(controller_name)}##{descriptor.to_s.camelize(:lower)}".html_safe
 
           # actions: { controller: { event: :action } }
           elsif descriptor.is_a?(Hash)
             dom_event = descriptor.keys.first
             stimulus_function = descriptor.values.first
 
-            "#{dom_event}->#{parse_action_names(controller_name, stimulus_function)}"
+            # Have to consider escaping due to action notation containing `->`
+            "#{dom_event}->#{parse_action_names(controller_name, stimulus_function)}".html_safe
 
           # actions: { controller: [:action, { event: :action }] }
           elsif descriptor.is_a?(Array)
