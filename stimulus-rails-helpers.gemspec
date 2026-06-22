@@ -8,6 +8,6 @@ Gem::Specification.new do |s|
   s.license       = "MIT"
   s.homepage      = "https://github.com/jongilbraith/stimulus-rails-helpers"
 
-  s.add_runtime_dependency "actionview"
-  s.add_runtime_dependency "activesupport"
+  s.add_runtime_dependency "actionview", "~> 3.0.0"
+  s.add_runtime_dependency "activesupport", "~> 3.0.0"
 end
