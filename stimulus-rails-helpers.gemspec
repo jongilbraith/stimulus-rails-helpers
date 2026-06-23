@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "stimulus-rails-helpers"
-  s.version       = "0.1.0"
+  s.version       = "0.1.1"
   s.summary       = "Some helpers to help tame the task of wrangling Stimulus' data attributes."
   s.authors       = ["Jon Gilbraith"]
   s.files         = ["stimulus-rails-helpers.gemspec"] + Dir["lib/**/*.rb"]
