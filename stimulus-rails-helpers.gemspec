@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
   s.name          = "stimulus-rails-helpers"
-  s.version       = "0.1.2"
+  s.version       = "0.1.3"
   s.summary       = "Some helpers to help tame the task of wrangling Stimulus' data attributes."
   s.authors       = ["Jon Gilbraith"]
   s.files         = ["stimulus-rails-helpers.gemspec", "README.md", "CHANGELOG.md", "LICENSE"] + Dir["lib/**/*.rb"]
-  s.metadata      = { "source_code_uri" => "https://github.com/jongilbraith/stimulus-rails-helpers" }
+  s.metadata      = { "source_code_uri" => "https://github.com/dreckly/stimulus-rails-helpers" }
   s.license       = "MIT"
-  s.homepage      = "https://github.com/jongilbraith/stimulus-rails-helpers"
+  s.homepage      = "https://github.com/dreckly/stimulus-rails-helpers"
 
   s.add_runtime_dependency "actionview", ">= 3"
   s.add_runtime_dependency "activesupport", ">= 3"
