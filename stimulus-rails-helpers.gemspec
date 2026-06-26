@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.name          = "stimulus-rails-helpers"
-  s.version       = "0.1.1"
+  s.version       = "0.1.2"
   s.summary       = "Some helpers to help tame the task of wrangling Stimulus' data attributes."
   s.authors       = ["Jon Gilbraith"]
-  s.files         = ["stimulus-rails-helpers.gemspec"] + Dir["lib/**/*.rb"]
+  s.files         = ["stimulus-rails-helpers.gemspec", "README.md", "CHANGELOG.md", "LICENSE"] + Dir["lib/**/*.rb"]
   s.metadata      = { "source_code_uri" => "https://github.com/jongilbraith/stimulus-rails-helpers" }
   s.license       = "MIT"
   s.homepage      = "https://github.com/jongilbraith/stimulus-rails-helpers"
